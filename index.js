@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
-const post = require('./routes/post');
+
+const login = require('./routes/login');
+const register = require('./routes/register');
+const getSms = require('./routes/getSms');
 const port = 8000;
 
 app.use(express.json());
 
-app.use("/post", post);
+app.use("/login", login);
+app.use("/register", register);
+app.use("/getSms", getSms);
 
 app.get('/', (req, res) => {
     res.send("Hello World");
