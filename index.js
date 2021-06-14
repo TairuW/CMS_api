@@ -4,6 +4,9 @@ const app = express();
 const login = require('./routes/login');
 const register = require('./routes/register');
 const getSms = require('./routes/getSms');
+
+const department = require('./routes/department');
+
 const port = 8000;
 
 app.use(express.json());
@@ -11,6 +14,7 @@ app.use(express.json());
 app.use("/login", login);
 app.use("/register", register);
 app.use("/getSms", getSms);
+app.use("/department", department);
 
 app.get('/', (req, res) => {
     res.send("Hello World");
